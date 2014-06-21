@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+
+		<p>enter the text</p>
+		<input type="text" id ="someText">
+		<p>enter the word for search</p>
+		<input type="text" id ="theWord">
+		<button onclick="reverseNumber()">Search</button>
+
+		<p id="result"></p>
+		<script>
+			function reverseNumber()
+			{
+				var someText = document.getElementById('someText').value;
+				var upperCaseText = someText.toUpperCase();
+				var theWord = document.getElementById('theWord').value;
+				var upperCaseWord = theWord.toUpperCase();
+				var result = document.getElementById('result');
+				var index = -1;
+				var i;
+				var count = 0;
+				//result.innerHTML = upperCaseText.length;
+				for(i=0; i < upperCaseText.length; i++){
+				index = upperCaseText.search(upperCaseWord);
+				if (index >= 0){
+					count++;
+					upperCaseText = upperCaseText.substring(index + upperCaseWord.length, upperCaseText.length );
+				} 
+				index = -1;
+				}
+				result.innerHTML ='Your word appears ' + count + ' times in the text';
+			}
+				
+			</script>
+
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<p id="result">Eneter digit from 0 - 9</p>
+		<input type="text" id="digit">Digit</br>
+		<button type="button" onclick="transformToWord()">Sort</button>
+		<script type="text/javascript">
+			function transformToWord(){
+				var digit = parseInt(document.getElementById('digit').value);
+				var result;
+				switch (digit){
+					case 0: result = '<p>ZERO</p>';
+					break;
+					case 1: result = '<p>ONE</p>';
+					break;
+					case 2: result = '<p>TWO</p>';
+					break;
+					case 3: result = '<p>THREE</p>';
+					break;
+					case 4: result = '<p>FOUR</p>';
+					break;
+					case 5: result = '<p>FIVE</p>';
+					break;
+					case 6: result = '<p>SIX</p>';
+					break;
+					case 7: result = '<p>SEVEN</p>';
+					break;
+					case 8: result = '<p>EIGHT</p>';
+					break;
+					case 9: result ='<p>NINE</p>';
+					break;
+					default: result ='<p> ENTER DIGIT BETWEEN 0 - 9</p>';
+					}
+					document.getElementById('result').innerHTML = result;
+				}
+		</script>
+	
+	</body>
+</html>

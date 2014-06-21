@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+
+		<p>Reverse digits of your number</p>
+		<input type="text" id ="number">
+		<button onclick="reverseNumber()">Reverse</button>
+
+		<p id="result"></p>
+		<script>
+			function reverseNumber()
+			{
+				var number = parseInt(document.getElementById('number').value);
+				var result = document.getElementById('result');
+				var resultString = "";
+				var lastDigit;
+				var reverse;
+				while(number >= 1){
+				lastDigit = number%10;
+				resultString +=lastDigit + "";
+				number = Math.floor(number/10);	
+				}
+				result.innerHTML = resultString;
+			}
+				
+			</script>
+
+	</body>
+</html>

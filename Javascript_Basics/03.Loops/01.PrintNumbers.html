@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+	<input type="text" id="first"><p>First number</p>
+	<input type="text" id="last"> <p>Second number</p>
+	<button type="button" onclick="printNumbers()">Print numbers in the range</button>
+	</br>
+	<p id="result"></p>
+	<script type="text/javascript">
+		function printNumbers() {
+			var firstNumber = parseInt(document.getElementById('first').value);
+			var lastNumber = parseInt(document.getElementById('last').value);
+			var print = document.getElementById('result');
+			var counter;
+			for(counter = firstNumber; counter <= lastNumber; counter++){
+				print.innerHTML += counter + ' ';
+			}
+		}
+		
+	</script>
+	
+	
+	</body>
+	
+</html>

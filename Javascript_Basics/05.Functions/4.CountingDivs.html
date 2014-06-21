@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+
+		<div>div</div>
+		<div>div</div>
+		<div>div</div>
+		<div>div</div>
+		<div>div</div>
+		<div>div</div>
+		<div>div</div>
+		<div>div</div>
+		<div>div</div>
+		<div>div</div>
+		<div>div</div>
+		<button onclick="countDivs()">Count Divs</button>
+		
+		<p id="result"></p>
+		<script type="text/javascript">
+			function countDivs()
+			{
+				var count = document.getElementsByTagName('div');	
+				var result = document.getElementById('result');
+				result.innerHTML ='You have ' + count.length + ' divs in your document';
+			}
+				
+			</script>
+
+	</body>
+</html>

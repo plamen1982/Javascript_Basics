@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<p id="result">Eneter number between (0 - 999)</p>
+		<p id="test"></p>
+		<input type="text" id="number"></br>
+		<button type="button" onclick="convertNumbers()">Convert number</button>
+		<script type="text/javascript">
+			function convertNumbers(){
+			
+				var number = parseInt(document.getElementById('number').value);
+				var remain = number % 100;
+				var hundred = number - remain;
+				var decimalsRemain = remain % 10;
+				var decimals = remain - decimalsRemain;
+				var units = decimalsRemain;
+				var result = document.getElementById('result');
+				var test = document.getElementById('test');
+				
+			/*	test.innerHTML = 'hundred: ' + hundred + '</br> decimals: '
+				+ decimals + '</br> units ' + units + '</br> remain ' + remain; */
+				
+				if (number > 999) {
+					alert('Please enter number between (0-999)');
+				}
+				
+				else if(hundred === 0 && decimals === 0 && units === 0){
+				result.innerHTML='Zero';
+				}
+				
+				else if(hundred === 0 && decimals === 0){
+					switch(units){
+					case 1: result.innerHTML = 'One'; break;
+					case 2: result.innerHTML = 'Two'; break;
+					case 3: result.innerHTML = 'Three'; break;
+					case 4: result.innerHTML = 'Four'; break;
+					case 5: result.innerHTML = 'Five'; break;
+					case 6: result.innerHTML = 'Six'; break;
+					case 7: result.innerHTML = 'Seven'; break;
+					case 8: result.innerHTML = 'Eight'; break;
+					case 9: result.innerHTML = 'Nine'; break;
+						}
+					}
+					
+				else if( number >=10 && number <= 19 ){
+						switch(number){
+						case 10: result.innerHTML = 'Ten'; break;
+						case 11: result.innerHTML = 'Eleven'; break;
+						case 12: result.innerHTML = 'Twelve '; break;
+						case 13: result.innerHTML = 'Thirteen'; break;
+						case 14: result.innerHTML = 'Fourteen'; break;
+						case 15: result.innerHTML = 'Fifteen'; break;
+						case 16: result.innerHTML = 'Sixteen'; break;
+						case 17: result.innerHTML = 'Seventeen'; break;
+						case 18: result.innerHTML = 'Eighteen'; break;
+						case 19: result.innerHTML = 'Nineteen'; break;
+						}
+					}
+				else if(number > 19 && number < 100 && units === 0){
+					switch(decimals){
+						case 20: result.innerHTML ='Twenty';break;
+						case 30: result.innerHTML ='Thirty';break;
+						case 40: result.innerHTML ='Forty';break;
+						case 50: result.innerHTML ='Fifty';break;
+						case 60: result.innerHTML ='Sixty';break;
+						case 70: result.innerHTML ='Seventy';break;
+						case 80: result.innerHTML ='Eighty';break;
+						case 90: result.innerHTML ='Ninety';break;
+						}
+					}
+					
+				else if(number > 19 && number < 100 && units !== 0){
+					switch(decimals){
+					
+						case 20: result.innerHTML ='Twenty';
+								switch(units){
+							case 1: result.innerHTML += ' one'; break;
+							case 2: result.innerHTML += ' two'; break;
+							case 3: result.innerHTML += ' three'; break;
+							case 4: result.innerHTML += ' four'; break;
+							case 5: result.innerHTML += ' five'; break;
+							case 6: result.innerHTML += ' six'; break;
+							case 7: result.innerHTML += ' seven'; break;
+							case 8: result.innerHTML += ' eight'; break;
+							case 9: result.innerHTML += ' nine'; break;
+							} break;		
+							
+						case 30: result.innerHTML ='Thirty';
+							switch(units){
+							case 1: result.innerHTML += ' one'; break;
+							case 2: result.innerHTML += ' two'; break;
+							case 3: result.innerHTML += ' three'; break;
+							case 4: result.innerHTML += ' four'; break;
+							case 5: result.innerHTML += ' five'; break;
+							case 6: result.innerHTML += ' six'; break;
+							case 7: result.innerHTML += ' seven'; break;
+							case 8: result.innerHTML += ' eight'; break;
+							case 9: result.innerHTML += ' nine'; break;
+							} break;	
+					
+						case 40: result.innerHTML ='Forty';
+							switch(units){
+							case 1: result.innerHTML += ' one'; break;
+							case 2: result.innerHTML += ' two'; break;
+							case 3: result.innerHTML += ' three'; break;
+							case 4: result.innerHTML += ' four'; break;
+							case 5: result.innerHTML += ' five'; break;
+							case 6: result.innerHTML += ' six'; break;
+							case 7: result.innerHTML += ' seven'; break;
+							case 8: result.innerHTML += ' eight'; break;
+							case 9: result.innerHTML += ' nine'; break;
+							} break;	
+							
+						case 50: result.innerHTML ='Fifty';
+							switch(units){
+							case 1: result.innerHTML += ' one'; break;
+							case 2: result.innerHTML += ' two'; break;
+							case 3: result.innerHTML += ' three'; break;
+							case 4: result.innerHTML += ' four'; break;
+							case 5: result.innerHTML += ' five'; break;
+							case 6: result.innerHTML += ' six'; break;
+							case 7: result.innerHTML += ' seven'; break;
+							case 8: result.innerHTML += ' eight'; break;
+							case 9: result.innerHTML += ' nine'; break;
+							} break;	
+							
+						case 60: result.innerHTML ='Sixty';
+							switch(units){
+							case 1: result.innerHTML += ' one'; break;
+							case 2: result.innerHTML += ' two'; break;
+							case 3: result.innerHTML += ' three'; break;
+							case 4: result.innerHTML += ' four'; break;
+							case 5: result.innerHTML += ' five'; break;
+							case 6: result.innerHTML += ' six'; break;
+							case 7: result.innerHTML += ' seven'; break;
+							case 8: result.innerHTML += ' eight'; break;
+							case 9: result.innerHTML += ' nine'; break;
+							} break;	
+							
+						case 70: result.innerHTML ='Seventy';
+							switch(units){
+							case 1: result.innerHTML += ' one'; break;
+							case 2: result.innerHTML += ' two'; break;
+							case 3: result.innerHTML += ' three'; break;
+							case 4: result.innerHTML += ' four'; break;
+							case 5: result.innerHTML += ' five'; break;
+							case 6: result.innerHTML += ' six'; break;
+							case 7: result.innerHTML += ' seven'; break;
+							case 8: result.innerHTML += ' eight'; break;
+							case 9: result.innerHTML += ' nine'; break;
+							} break;
+							
+						case 80: result.innerHTML ='Eighty';
+							switch(units){
+							case 1: result.innerHTML += ' one'; break;
+							case 2: result.innerHTML += ' two'; break;
+							case 3: result.innerHTML += ' three'; break;
+							case 4: result.innerHTML += ' four'; break;
+							case 5: result.innerHTML += ' five'; break;
+							case 6: result.innerHTML += ' six'; break;
+							case 7: result.innerHTML += ' seven'; break;
+							case 8: result.innerHTML += ' eight'; break;
+							case 9: result.innerHTML += ' nine'; break;
+							} break;	
+							
+						case 90: result.innerHTML ='Ninety';
+							switch(units){
+							case 1: result.innerHTML += ' one'; break;
+							case 2: result.innerHTML += ' two'; break;
+							case 3: result.innerHTML += ' three'; break;
+							case 4: result.innerHTML += ' four'; break;
+							case 5: result.innerHTML += ' five'; break;
+							case 6: result.innerHTML += ' six'; break;
+							case 7: result.innerHTML += ' seven'; break;
+							case 8: result.innerHTML += ' eight'; break;
+							case 9: result.innerHTML += ' nine'; break;
+							} break;	
+						}
+					}
+						
+						else if(hundred >= 100 && decimals === 0 && units ===0 ) {
+						switch(number){
+							case 100: result.innerHTML = 'One hundred'; break;
+							case 200: result.innerHTML = 'Two hundred'; break;
+							case 300: result.innerHTML = 'Three hundred'; break;
+							case 400: result.innerHTML = 'Four hundred'; break;
+							case 500: result.innerHTML = 'Five hundred'; break;
+							case 600: result.innerHTML = 'Six hundred'; break;
+							case 700: result.innerHTML = 'Seven hundred'; break;
+							case 800: result.innerHTML = 'Eight hundred'; break;
+							case 900: result.innerHTML = 'Nine hundred'; break;
+
+								}
+							}
+					else if(number > 100 && decimals === 0 && units !==0 ) {
+						switch(hundred){
+							case 100: result.innerHTML = 'One hundred'; 
+								switch(units){
+									case 1: result.innerHTML += ' and one'; break;
+									case 2: result.innerHTML += ' and two'; break;
+									case 3: result.innerHTML += ' and three'; break;
+									case 4: result.innerHTML += ' and four'; break;
+									case 5: result.innerHTML += ' and five'; break;
+									case 6: result.innerHTML += ' and six'; break;
+									case 7: result.innerHTML += ' and seven'; break;
+									case 8: result.innerHTML += ' and eight'; break;
+									case 9: result.innerHTML += ' and nine'; break;
+								} break;	
+							case 200: result.innerHTML = 'Two hundred'; 					
+								switch(units){
+									case 1: result.innerHTML += ' and one'; break;
+									case 2: result.innerHTML += ' and two'; break;
+									case 3: result.innerHTML += ' and three'; break;
+									case 4: result.innerHTML += ' and four'; break;
+									case 5: result.innerHTML += ' and five'; break;
+									case 6: result.innerHTML += ' and six'; break;
+									case 7: result.innerHTML += ' and seven'; break;
+									case 8: result.innerHTML += ' and eight'; break;
+									case 9: result.innerHTML += ' and nine'; break;
+								} break;	
+
+							case 300: result.innerHTML = 'Three hundred'; 
+								switch(units){
+									case 1: result.innerHTML += ' and one'; break;
+									case 2: result.innerHTML += ' and two'; break;
+									case 3: result.innerHTML += ' and three'; break;
+									case 4: result.innerHTML += ' and four'; break;
+									case 5: result.innerHTML += ' and five'; break;
+									case 6: result.innerHTML += ' and six'; break;
+									case 7: result.innerHTML += ' and seven'; break;
+									case 8: result.innerHTML += ' and eight'; break;
+									case 9: result.innerHTML += ' and nine'; break;
+								} break;	
+
+							case 400: result.innerHTML = 'Four hundred'; 
+								switch(units){
+									case 1: result.innerHTML += ' and one'; break;
+									case 2: result.innerHTML += ' and two'; break;
+									case 3: result.innerHTML += ' and three'; break;
+									case 4: result.innerHTML += ' and four'; break;
+									case 5: result.innerHTML += ' and five'; break;
+									case 6: result.innerHTML += ' and six'; break;
+									case 7: result.innerHTML += ' and seven'; break;
+									case 8: result.innerHTML += ' and eight'; break;
+									case 9: result.innerHTML += ' and nine'; break;
+								} break;
+								
+							case 500: result.innerHTML = 'Five hundred'; 
+								switch(units){
+									case 1: result.innerHTML += ' and one'; break;
+									case 2: result.innerHTML += ' and two'; break;
+									case 3: result.innerHTML += ' and three'; break;
+									case 4: result.innerHTML += ' and four'; break;
+									case 5: result.innerHTML += ' and five'; break;
+									case 6: result.innerHTML += ' and six'; break;
+									case 7: result.innerHTML += ' and seven'; break;
+									case 8: result.innerHTML += ' and eight'; break;
+									case 9: result.innerHTML += ' and nine'; break;
+								} break;
+								
+							case 600: result.innerHTML = 'Six hundred'; 
+								switch(units){
+									case 1: result.innerHTML += ' and one'; break;
+									case 2: result.innerHTML += ' and two'; break;
+									case 3: result.innerHTML += ' and three'; break;
+									case 4: result.innerHTML += ' and four'; break;
+									case 5: result.innerHTML += ' and five'; break;
+									case 6: result.innerHTML += ' and six'; break;
+									case 7: result.innerHTML += ' and seven'; break;
+									case 8: result.innerHTML += ' and eight'; break;
+									case 9: result.innerHTML += ' and nine'; break;
+								} break;
+								
+							case 700: result.innerHTML = 'Seven hundred'; 
+								switch(units){
+									case 1: result.innerHTML += ' and one'; break;
+									case 2: result.innerHTML += ' and two'; break;
+									case 3: result.innerHTML += ' and three'; break;
+									case 4: result.innerHTML += ' and four'; break;
+									case 5: result.innerHTML += ' and five'; break;
+									case 6: result.innerHTML += ' and six'; break;
+									case 7: result.innerHTML += ' and seven'; break;
+									case 8: result.innerHTML += ' and eight'; break;
+									case 9: result.innerHTML += ' and nine'; break;
+								} break;
+								
+							case 800: result.innerHTML = 'Eight hundred'; 
+							switch(units){
+								case 1: result.innerHTML += ' and one'; break;
+								case 2: result.innerHTML += ' and two'; break;
+								case 3: result.innerHTML += ' and three'; break;
+								case 4: result.innerHTML += ' and four'; break;
+								case 5: result.innerHTML += ' and five'; break;
+								case 6: result.innerHTML += ' and six'; break;
+								case 7: result.innerHTML += ' and seven'; break;
+								case 8: result.innerHTML += ' and eight'; break;
+								case 9: result.innerHTML += ' and nine'; break;
+								} break;
+								
+							case 900: result.innerHTML = 'Nine hundred'; 
+							switch(units){
+								case 1: result.innerHTML += ' and one'; break;
+								case 2: result.innerHTML += ' and two'; break;
+								case 3: result.innerHTML += ' and three'; break;
+								case 4: result.innerHTML += ' and four'; break;
+								case 5: result.innerHTML += ' and five'; break;
+								case 6: result.innerHTML += ' and six'; break;
+								case 7: result.innerHTML += ' and seven'; break;
+								case 8: result.innerHTML += ' and eight'; break;
+								case 9: result.innerHTML += ' and nine'; break;
+								} break;
+							}
+						}
+						
+					else if(number > 100 && remain >= 10 && remain <= 19 ) {
+						switch(hundred){
+							case 100: result.innerHTML = 'One hundred'; 
+								switch(remain){
+									case 10: result.innerHTML += ' and ten'; break;
+									case 11: result.innerHTML += ' and eleven'; break;
+									case 12: result.innerHTML += ' and twelve '; break;
+									case 13: result.innerHTML += ' and thirteen'; break;
+									case 14: result.innerHTML += ' and fourteen'; break;
+									case 15: result.innerHTML += ' and fifteen'; break;
+									case 16: result.innerHTML += ' and sixteen'; break;
+									case 17: result.innerHTML += ' and seventeen'; break;
+									case 18: result.innerHTML += ' and eighteen'; break;
+									case 19: result.innerHTML += ' and nineteen'; break;
+									} break;
+									
+							case 200: result.innerHTML = 'Two hundred'; 
+								switch(remain){
+									case 10: result.innerHTML += ' and ten'; break;
+									case 11: result.innerHTML += ' and eleven'; break;
+									case 12: result.innerHTML += ' and twelve '; break;
+									case 13: result.innerHTML += ' and thirteen'; break;
+									case 14: result.innerHTML += ' and fourteen'; break;
+									case 15: result.innerHTML += ' and fifteen'; break;
+									case 16: result.innerHTML += ' and sixteen'; break;
+									case 17: result.innerHTML += ' and seventeen'; break;
+									case 18: result.innerHTML += ' and eighteen'; break;
+									case 19: result.innerHTML += ' and nineteen'; break;
+									} break;
+									
+							case 300: result.innerHTML = 'Three hundred'; 
+								switch(remain){
+									case 10: result.innerHTML += ' and ten'; break;
+									case 11: result.innerHTML += ' and eleven'; break;
+									case 12: result.innerHTML += ' and twelve '; break;
+									case 13: result.innerHTML += ' and thirteen'; break;
+									case 14: result.innerHTML += ' and fourteen'; break;
+									case 15: result.innerHTML += ' and fifteen'; break;
+									case 16: result.innerHTML += ' and sixteen'; break;
+									case 17: result.innerHTML += ' and seventeen'; break;
+									case 18: result.innerHTML += ' and eighteen'; break;
+									case 19: result.innerHTML += ' and nineteen'; break;
+									} break;
+									
+							case 400: result.innerHTML = 'Four hundred'; 
+								switch(remain){
+									case 10: result.innerHTML += ' and ten'; break;
+									case 11: result.innerHTML += ' and eleven'; break;
+									case 12: result.innerHTML += ' and twelve '; break;
+									case 13: result.innerHTML += ' and thirteen'; break;
+									case 14: result.innerHTML += ' and fourteen'; break;
+									case 15: result.innerHTML += ' and fifteen'; break;
+									case 16: result.innerHTML += ' and sixteen'; break;
+									case 17: result.innerHTML += ' and seventeen'; break;
+									case 18: result.innerHTML += ' and eighteen'; break;
+									case 19: result.innerHTML += ' and nineteen'; break;
+									} break;
+									
+							case 500: result.innerHTML = 'Five hundred'; 
+								switch(remain){
+									case 10: result.innerHTML += ' and ten'; break;
+									case 11: result.innerHTML += ' and eleven'; break;
+									case 12: result.innerHTML += ' and twelve '; break;
+									case 13: result.innerHTML += ' and thirteen'; break;
+									case 14: result.innerHTML += ' and fourteen'; break;
+									case 15: result.innerHTML += ' and fifteen'; break;
+									case 16: result.innerHTML += ' and sixteen'; break;
+									case 17: result.innerHTML += ' and seventeen'; break;
+									case 18: result.innerHTML += ' and eighteen'; break;
+									case 19: result.innerHTML += ' and nineteen'; break;
+									} break;
+									
+							case 600: result.innerHTML = 'Six hundred'; 
+								switch(remain){
+									case 10: result.innerHTML += ' and ten'; break;
+									case 11: result.innerHTML += ' and eleven'; break;
+									case 12: result.innerHTML += ' and twelve '; break;
+									case 13: result.innerHTML += ' and thirteen'; break;
+									case 14: result.innerHTML += ' and fourteen'; break;
+									case 15: result.innerHTML += ' and fifteen'; break;
+									case 16: result.innerHTML += ' and sixteen'; break;
+									case 17: result.innerHTML += ' and seventeen'; break;
+									case 18: result.innerHTML += ' and eighteen'; break;
+									case 19: result.innerHTML += ' and nineteen'; break;
+									} break;
+									
+							case 700: result.innerHTML = 'Seven hundred'; 
+								switch(remain){
+									case 10: result.innerHTML += ' and ten'; break;
+									case 11: result.innerHTML += ' and eleven'; break;
+									case 12: result.innerHTML += ' and twelve '; break;
+									case 13: result.innerHTML += ' and thirteen'; break;
+									case 14: result.innerHTML += ' and fourteen'; break;
+									case 15: result.innerHTML += ' and fifteen'; break;
+									case 16: result.innerHTML += ' and sixteen'; break;
+									case 17: result.innerHTML += ' and seventeen'; break;
+									case 18: result.innerHTML += ' and eighteen'; break;
+									case 19: result.innerHTML += ' and nineteen'; break;
+									} break;
+									
+							case 800: result.innerHTML = 'Eight hundred'; 
+								switch(remain){
+									case 10: result.innerHTML += ' and ten'; break;
+									case 11: result.innerHTML += ' and eleven'; break;
+									case 12: result.innerHTML += ' and twelve '; break;
+									case 13: result.innerHTML += ' and thirteen'; break;
+									case 14: result.innerHTML += ' and fourteen'; break;
+									case 15: result.innerHTML += ' and fifteen'; break;
+									case 16: result.innerHTML += ' and sixteen'; break;
+									case 17: result.innerHTML += ' and seventeen'; break;
+									case 18: result.innerHTML += ' and eighteen'; break;
+									case 19: result.innerHTML += ' and nineteen'; break;
+									} break;
+									
+							case 900: result.innerHTML = 'Nine hundred'; 
+								switch(remain){
+									case 10: result.innerHTML += ' and ten'; break;
+									case 11: result.innerHTML += ' and eleven'; break;
+									case 12: result.innerHTML += ' and twelve '; break;
+									case 13: result.innerHTML += ' and thirteen'; break;
+									case 14: result.innerHTML += ' and fourteen'; break;
+									case 15: result.innerHTML += ' and fifteen'; break;
+									case 16: result.innerHTML += ' and sixteen'; break;
+									case 17: result.innerHTML += ' and seventeen'; break;
+									case 18: result.innerHTML += ' and eighteen'; break;
+									case 19: result.innerHTML += ' and nineteen'; break;
+								} break;
+							}
+						}
+						else if(number > 100 && remain >= 20 && units === 0 ){
+						switch(hundred){
+						
+							case 100: result.innerHTML = 'One hundred'; 
+								switch(decimals){
+									case 20: result.innerHTML +=' and twenty';break;
+									case 30: result.innerHTML +=' and thirty';break;
+									case 40: result.innerHTML +=' and forty';break;
+									case 50: result.innerHTML +=' and fifty';break;
+									case 60: result.innerHTML +=' and sixty';break;
+									case 70: result.innerHTML +=' and seventy';break;
+									case 80: result.innerHTML +=' and eighty';break;
+									case 90: result.innerHTML +=' and ninety';break;
+						} break;
+						
+							case 200: result.innerHTML = 'Two hundred'; 
+								switch(decimals){
+										case 20: result.innerHTML +=' and twenty';break;
+										case 30: result.innerHTML +=' and thirty';break;
+										case 40: result.innerHTML +=' and forty';break;
+										case 50: result.innerHTML +=' and fifty';break;
+										case 60: result.innerHTML +=' and sixty';break;
+										case 70: result.innerHTML +=' and seventy';break;
+										case 80: result.innerHTML +=' and eighty';break;
+										case 90: result.innerHTML +=' and ninety';break;
+						} break;
+						
+							case 300: result.innerHTML = 'Three hundred';
+								switch(decimals){
+										case 20: result.innerHTML +=' and twenty';break;
+										case 30: result.innerHTML +=' and thirty';break;
+										case 40: result.innerHTML +=' and forty';break;
+										case 50: result.innerHTML +=' and fifty';break;
+										case 60: result.innerHTML +=' and sixty';break;
+										case 70: result.innerHTML +=' and seventy';break;
+										case 80: result.innerHTML +=' and eighty';break;
+										case 90: result.innerHTML +=' and ninety';break;
+						} break;
+						
+							case 400: result.innerHTML = 'Four hundred'; 
+								switch(decimals){
+										case 20: result.innerHTML +=' and twenty';break;
+										case 30: result.innerHTML +=' and thirty';break;
+										case 40: result.innerHTML +=' and forty';break;
+										case 50: result.innerHTML +=' and fifty';break;
+										case 60: result.innerHTML +=' and sixty';break;
+										case 70: result.innerHTML +=' and seventy';break;
+										case 80: result.innerHTML +=' and eighty';break;
+										case 90: result.innerHTML +=' and ninety';break;
+						} break;
+						
+							case 500: result.innerHTML = 'Five hundred'; 
+								switch(decimals){
+										case 20: result.innerHTML +=' and twenty';break;
+										case 30: result.innerHTML +=' and thirty';break;
+										case 40: result.innerHTML +=' and forty';break;
+										case 50: result.innerHTML +=' and fifty';break;
+										case 60: result.innerHTML +=' and sixty';break;
+										case 70: result.innerHTML +=' and seventy';break;
+										case 80: result.innerHTML +=' and eighty';break;
+										case 90: result.innerHTML +=' and ninety';break;
+						} break;
+						
+							case 600: result.innerHTML = 'Six hundred'; 
+								switch(decimals){
+										case 20: result.innerHTML +=' and twenty';break;
+										case 30: result.innerHTML +=' and thirty';break;
+										case 40: result.innerHTML +=' and forty';break;
+										case 50: result.innerHTML +=' and fifty';break;
+										case 60: result.innerHTML +=' and sixty';break;
+										case 70: result.innerHTML +=' and seventy';break;
+										case 80: result.innerHTML +=' and eighty';break;
+										case 90: result.innerHTML +=' and ninety';break;
+						} break;
+						
+							case 700: result.innerHTML = 'Seven hundred'; 
+								switch(decimals){
+										case 20: result.innerHTML +=' and twenty';break;
+										case 30: result.innerHTML +=' and thirty';break;
+										case 40: result.innerHTML +=' and forty';break;
+										case 50: result.innerHTML +=' and fifty';break;
+										case 60: result.innerHTML +=' and sixty';break;
+										case 70: result.innerHTML +=' and seventy';break;
+										case 80: result.innerHTML +=' and eighty';break;
+										case 90: result.innerHTML +=' and ninety';break;
+						} break;
+						
+							case 800: result.innerHTML = 'Eight hundred'; 
+								switch(decimals){
+										case 20: result.innerHTML +=' and twenty';break;
+										case 30: result.innerHTML +=' and thirty';break;
+										case 40: result.innerHTML +=' and forty';break;
+										case 50: result.innerHTML +=' and fifty';break;
+										case 60: result.innerHTML +=' and sixty';break;
+										case 70: result.innerHTML +=' and seventy';break;
+										case 80: result.innerHTML +=' and eighty';break;
+										case 90: result.innerHTML +=' and ninety';break;
+						} break;
+						
+							case 900: result.innerHTML = 'Nine hundred'; 
+								switch(decimals){
+										case 20: result.innerHTML +=' and twenty';break;
+										case 30: result.innerHTML +=' and thirty';break;
+										case 40: result.innerHTML +=' and forty';break;
+										case 50: result.innerHTML +=' and fifty';break;
+										case 60: result.innerHTML +=' and sixty';break;
+										case 70: result.innerHTML +=' and seventy';break;
+										case 80: result.innerHTML +=' and eighty';break;
+										case 90: result.innerHTML +=' and ninety';break;
+						} break;
+					}
+				}
+						 else if(hundred >= 100 && remain >= 20 && units !==0){
+							switch(hundred){
+								case 100: result.innerHTML = 'One hundred'; 
+									switch(decimals){
+									
+									case 20: result.innerHTML +=' and twenty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+									} break;	
+									
+									case 30: result.innerHTML +=' and thirty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+								
+									case 40: result.innerHTML +=' and forty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 50: result.innerHTML +=' and fifty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 60: result.innerHTML +=' and sixty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 70: result.innerHTML +=' and seventy';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;
+											
+									case 80: result.innerHTML +=' and eighty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 90: result.innerHTML +=' and ninety';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} 
+									} break;
+									
+								case 200: result.innerHTML = 'Two hundred'; 
+								switch(decimals){
+									case 20: result.innerHTML +=' and twenty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+									} break;	
+									
+									case 30: result.innerHTML +=' and thirty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+								
+									case 40: result.innerHTML +=' and forty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 50: result.innerHTML +=' and fifty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;
+											
+									case 60: result.innerHTML +=' and sixty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;
+											
+									case 70: result.innerHTML +=' and seventy';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 80: result.innerHTML +=' and eighty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 90: result.innerHTML +=' and ninety';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} 
+									} break;
+									
+								case 300: result.innerHTML = 'Three hundred'; 
+								switch(decimals){
+								
+									case 20: result.innerHTML +=' and twenty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+									} break;	
+									
+									case 30: result.innerHTML +=' and thirty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+								
+									case 40: result.innerHTML +=' and forty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 50: result.innerHTML +=' and fifty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 60: result.innerHTML +=' and sixty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 70: result.innerHTML +=' and seventy';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 80: result.innerHTML +=' and eighty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;
+											
+									case 90: result.innerHTML +=' and ninety';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} 
+									} break;
+									
+								case 400: result.innerHTML = 'Four hundred';
+								switch(decimals){
+									case 20: result.innerHTML +=' and twenty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+									} break;
+									
+									case 30: result.innerHTML +=' and thirty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+								
+									case 40: result.innerHTML +=' and forty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;
+											
+									case 50: result.innerHTML +=' and fifty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 60: result.innerHTML +=' and sixty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 70: result.innerHTML +=' and seventy';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 80: result.innerHTML +=' and eighty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 90: result.innerHTML +=' and ninety';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} 
+									} break;
+									
+								case 500: result.innerHTML = 'Five hundred'; 
+								switch(decimals){
+								
+									case 20: result.innerHTML +=' and twenty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+									} break;	
+									
+									case 30: result.innerHTML +=' and thirty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+								
+									case 40: result.innerHTML +=' and forty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 50: result.innerHTML +=' and fifty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 60: result.innerHTML +=' and sixty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;
+											
+									case 70: result.innerHTML +=' and seventy';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 80: result.innerHTML +=' and eighty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 90: result.innerHTML +=' and ninety';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} 
+									} break;
+									
+								case 600: result.innerHTML = 'Six hundred'; 
+								switch(decimals){
+								
+									case 20: result.innerHTML +=' and twenty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+									} break;				
+									
+									case 30: result.innerHTML +=' and thirty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+								
+									case 40: result.innerHTML +=' and forty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 50: result.innerHTML +=' and fifty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 60: result.innerHTML +=' and sixty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 70: result.innerHTML +=' and seventy';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 80: result.innerHTML +=' and eighty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 90: result.innerHTML +=' and ninety';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} 
+									} break;
+									
+								case 700: result.innerHTML = 'Seven hundred'; 
+								switch(decimals){
+									case 20: result.innerHTML +=' and twenty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+									} break;	
+									
+									case 30: result.innerHTML +=' and thirty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+								
+									case 40: result.innerHTML +=' and forty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 50: result.innerHTML +=' and fifty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 60: result.innerHTML +=' and sixty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 70: result.innerHTML +=' and seventy';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 80: result.innerHTML +=' and eighty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 90: result.innerHTML +=' and ninety';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} 
+									} break;
+									
+								case 800: result.innerHTML = 'Eight hundred'; 
+								switch(decimals){
+									case 20: result.innerHTML +=' and twenty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+									} break;	
+									
+									case 30: result.innerHTML +=' and thirty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+								
+									case 40: result.innerHTML +=' and forty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 50: result.innerHTML +=' and fifty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 60: result.innerHTML +=' and sixty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 70: result.innerHTML +=' and seventy';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;
+											
+									case 80: result.innerHTML +=' and eighty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;
+											
+									case 90: result.innerHTML +=' and ninety';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} 
+									} break;
+									
+								case 900: result.innerHTML = 'Nine hundred'; 
+								switch(decimals){
+									case 20: result.innerHTML +=' and twenty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+									} break;	
+									
+									case 30: result.innerHTML +=' and thirty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+								
+									case 40: result.innerHTML +=' and forty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;
+											
+									case 50: result.innerHTML +=' and fifty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;
+											
+									case 60: result.innerHTML +=' and sixty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;
+											
+									case 70: result.innerHTML +=' and seventy';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;
+											
+									case 80: result.innerHTML +=' and eighty';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+											} break;	
+											
+									case 90: result.innerHTML +=' and ninety';
+										switch(units){
+											case 1: result.innerHTML += ' one'; break;
+											case 2: result.innerHTML += ' two'; break;
+											case 3: result.innerHTML += ' three'; break;
+											case 4: result.innerHTML += ' four'; break;
+											case 5: result.innerHTML += ' five'; break;
+											case 6: result.innerHTML += ' six'; break;
+											case 7: result.innerHTML += ' seven'; break;
+											case 8: result.innerHTML += ' eight'; break;
+											case 9: result.innerHTML += ' nine'; break;
+								} 
+							} break;
+						}
+					} 
+				} 
+
+		
+		</script>
+	
+	</body>
+</html>

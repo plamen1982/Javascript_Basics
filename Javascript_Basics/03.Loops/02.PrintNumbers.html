@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<p> Please enter first and last number</p>
+		<input type="text" id="firstNumber">
+		<input type="text" id="lastNumber">
+		<button type="button" onclick="printNumbers()">Print numbers in the range</button>
+		<p id="printResult"> </p>
+		<script type="text/javascript">
+			function printNumbers(){
+			var printResult = document.getElementById('printResult');
+			var counter;
+			var firstNumber = parseInt(document.getElementById('firstNumber').value);
+			var lastNumber = parseInt(document.getElementById('lastNumber').value);
+			for (counter = firstNumber; counter <= lastNumber; counter++){
+					if(counter%3*7 !== 0){
+						printResult.innerHTML += counter +' ';
+					}
+				}
+				
+			}
+		</script>
+	</body>
+</html>

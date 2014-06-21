@@ -1,0 +1,41 @@
+<!DOCTYPE html />
+<html>
+	<head>
+	<title>Is your number a prime number?</title>
+	</head>
+	<body>
+		<p id="notice">PLEASE NUMBER BETWEEN 0 AND 100</p>
+		<input type="text" id="number"/>
+		<button type="button" onclick="isPrime()">PRIME?</button>
+		<script type="text/javascript">
+		function isPrime(){
+			var number = document.getElementById('number').value;
+			if (number >= 100) {
+					document.getElementById('notice').innerHTML = '<p>PLEASE, ENTER NUMBER LESS THAT 100</p>';
+					}
+			else {
+			if (number < 2) {
+					document.getElementById('notice').innerHTML = '<p>THE NUMBER IS A PRIME NUMBER</p>';
+				}
+				else {
+					var squareRoot = Math.sqrt(number);
+					var roundNumber = Math.round(squareRoot);
+					document.getElementById('notice').innerHTML = roundNumber;
+					var prime = true;
+					for(var i = 2; i <= roundNumber; i++){
+							if(number%i===0){
+							prime = false;
+						}						
+					}
+				if(prime){
+						document.getElementById('notice').innerHTML = '<p>THE NUMBER IS A PRIME NUMBER</p>'
+				}
+				else{
+						document.getElementById('notice').innerHTML = '<P>THE NUMBER IS NOT A PRIME NUMBER</P>'
+				}						
+			}
+		}
+	}
+	</script>
+	</body>
+</html>

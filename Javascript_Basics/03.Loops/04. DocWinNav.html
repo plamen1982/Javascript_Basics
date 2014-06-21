@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>DocWinNav</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+
+		function printAll(obj) {
+			jsConsole.writeLine("------------------------------------------------------------------------------");
+			for (var property in obj) {
+				jsConsole.writeLine("obj[" + property + "] = " + obj[property]);
+			}
+			jsConsole.writeLine("------------------------------------------------------------------------------");
+		}
+
+			var doc = document;
+			printAll(doc);
+			var win = window;
+			printAll(win);
+			var nav = navigation;
+			printAll(nav);
+
+
+	</script>
+</body>
+</html>

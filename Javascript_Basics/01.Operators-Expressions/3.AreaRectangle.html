@@ -1,0 +1,20 @@
+<!DOCTYPE html />
+<html>
+	<head>
+	<title>Calculate rectangle area</title>
+	</head>
+	<body>
+		<input type="text" id="width"/>Width
+        <input type="text" id="height" />Height </br>
+        <button type="button" onclick="calcArea()">Calculate</button>
+        <input type="text" id="area" /><sup>2</sup>
+		<script type="text/javascript">
+            function calcArea() {
+				var width = document.getElementById("width").value;
+				var height = document.getElementById("height").value;
+				var area = width * height;
+				document.getElementById("area").value = area;
+			}
+		</script>
+	</body>
+</html>

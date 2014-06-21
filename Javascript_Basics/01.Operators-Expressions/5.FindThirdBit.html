@@ -1,0 +1,24 @@
+<!DOCTYPE html />
+<html>
+	<head>
+	<title>Find the third bit</title>
+	</head>
+	<body>
+		<input type="text" id="number"/>
+		<button type="button" onclick="showThirdBit()">Third bit?</button>
+		<script type="text/javascript">
+			function showThirdBit() {
+				var  number = document.getElementById("number").value;
+				//alert(number);
+				var thirdBit = number>>3;
+				var lastBit = thirdBit&1;
+				if (lastBit === 1) {
+					alert('the third bit is 1');
+				}
+				else {
+					alert('the third bit is 0');
+				}
+			}
+		</script>
+	</body>
+</html>

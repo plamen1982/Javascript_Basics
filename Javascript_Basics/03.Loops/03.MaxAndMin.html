@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<input type="text" id="enterNumber">
+		<button type="button" onclick="printInputs()">How many numbers you will compare?</button>
+		<p id="message"></p>
+		<div id="container">
+		
+		</div>
+		<p id="result"></p>
+		<script type="text/javascript">
+			function printInputs(){
+				var result = document.getElementById('result');
+				var counter;
+				var forInputs = document.getElementById('forInputs');
+				var enterNumber = parseInt(document.getElementById('enterNumber').value);
+				var maxValue = Number.MIN_VALUE;
+				var minValue = Number.MAX_VALUE;
+				
+				//Clear previews content of the container
+				
+				while (container.hasChildNodes()) {
+					container.removeChild(container.lastChild);
+				}
+				
+				//Insert dynamic input text fields with dynamic ids
+				
+				var message = document.getElementById('message');
+				message.innerHTML = '<p> Please enter your ' + enterNumber + ' numbers into the next ' + enterNumber + ' fields </>'
+				
+				for (counter = 0; counter < enterNumber; counter++){
+						
+				// creating dynamic ids
+						
+						var input = document.createElement('input');
+						input.type = 'text';
+						input.id = 'input' + counter;
+						
+				// insert numbers before the inputs
+						
+						var node = document.createTextNode((counter + 1) + '. ');
+						container.appendChild(node);
+						
+				// insert the inputs
+						
+						container.appendChild(input);
+						
+				// new line
+						
+						container.appendChild(document.createElement('br'));	
+						
+						}
+						
+						container.appendChild(document.createElement('br'));
+						var inputCompare = document.createElement('input');
+						inputCompare.type = 'button';
+						inputCompare.value = 'Compare';
+						container.appendChild(inputCompare) ;
+						
+				//Call the function for comparing the numbers
+						
+						inputCompare.onclick = function (){
+						
+						var index;
+						var element;
+						for (index = 0; index < enterNumber; index++) {
+							element = parseInt(document.getElementById('input' + index).value);
+							if( maxValue < element){
+							maxValue = element;
+							}
+							if(minValue > element) {
+								minValue = element;
+							}			
+					} 
+					result.innerHTML = '<h4> The smallest value is: ' + minValue + ' and the biggest value is: ' + maxValue + '</h4>'
+				}
+			}
+		</script>
+	</body>
+</html>

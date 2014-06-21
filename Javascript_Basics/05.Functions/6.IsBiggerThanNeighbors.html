@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+
+		<p>enter the position of your integer and you will if is bigger from 
+		it neighbors in the following array : [1,2,3,4,5,1,2,3,4,5,3,4,5,4,3,2,1,2,3,6]</p>
+	
+		<input type="text" id ="index">
+		<button onclick="checkNeighbors()">Search</button>
+
+		<p id="result"></p>
+		<script>
+			function checkNeighbors()
+			{	
+				var index = parseInt(document.getElementById('index').value);
+				var array = [1,2,3,4,5,1,2,3,4,5,3,4,5,4,3,2,1,2,3,6];
+				var rightMessage;
+				var leftMessage;
+				var result = document.getElementById('result');
+				
+				if(index > array.length || index < 0 ){
+				alert('Incorect input!')
+				} 
+				else{
+				if(array[index] > array[index + 1]){
+					rightMessage ='The element with index ' + index + ' is bigger that his right neighbor ';
+					}
+				else {
+					rightMessage ='The element with index ' + index + ' is smaller that his right neighbor ';			
+					}
+				
+				if(array[index] > array[index - 1]){
+					leftMessage =' and is bigger that his left neighbor';
+					}
+				else {
+					leftMessage =' and is smaller that his left neighbor';			
+					}
+				    result.innerHTML = rightMessage + leftMessage;
+					
+//--------------------------------------------------------------
+
+				if(index == 0){
+				if(array[index] > array[index + 1]){
+					rightMessage ='The element with index ' + index + ' is bigger that his right neighbor ';
+					}
+				else {
+					rightMessage ='The element with index ' + index + ' is smaller that his right neighbor ';			
+					}
+					result.innerHTML = rightMessage;
+				}
+				
+//--------------------------------------------------------------
+
+				if (index == array.length + 1){
+				
+				if(array[index] > array[index - 1]){
+					leftMessage ='The element with index ' + index + ' is bigger that his left neighbor ';
+					}
+				else {
+					leftMessage ='The element with index ' + index + ' is bigger that his left neighbor ';		
+					}
+				    result.innerHTML = leftMessage;
+					}
+					
+
+
+
+				}			
+			}
+			</script>
+
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+	<p >Print array from 20 elements multiply every element by 5</p>
+	<button type="button" onclick="printArray()">Print!</button>
+	</br>
+	<p id="result"></p>
+	<script type="text/javascript">
+		function printArray() {
+			var i;
+			var result = document.getElementById('result');
+			var array = new Array(20);
+			for (i = 0; i < array.length; i++){
+				array[i] = i*5;
+			}
+			result.innerHTML = array.join(', ');
+
+		}
+		
+	</script>
+	
+	
+	</body>
+	
+</html>

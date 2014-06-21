@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Even or odd</title>
+	</head>
+	
+	<body>
+		<input type="text" id="number"/>
+		<button type="button" id ="button" onclick="oddOrEven()">Even or odd number?</button>
+  
+		<script type="text/javascript">
+			function oddOrEven(){
+				var	checkedNumber=document.getElementById("number").value;
+				if (checkedNumber%2===0){
+					alert('Even number')
+					}
+				else {
+					alert('Odd number')
+				}	
+		}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+	<p> Check the index on your number in this (0,1,1,1,2,2,2,2,2,3,3,3,3,4,5,6,7,8,9) sorted array</p> 
+	
+
+	<input type="text" id="searchNumber"/>
+	<button type="button" onclick="binarySearch()">Find!</button>
+	</br>
+	<p id="result"></p>
+	<script type="text/javascript">
+		
+			var array  = new Array(0,1,1,1,2,2,2,2,2,3,3,3,3,4,5,6,7,8,9);
+			function binarySearch(){
+				var	searchNumber = parseInt(document.getElementById('searchNumber').value); 
+				var minIndex = 0;
+				var maxIndex = array.length - 1;
+				var midIndex;
+				
+				while (minIndex <= maxIndex){
+					midIndex = (minIndex + maxIndex)/2;
+					midIndex = Math.round(midIndex);
+					if(array[midIndex] == searchNumber) {
+						return alert('The first element with this nomber is with index ' + midIndex + ' in this array');
+						}
+					if  (array[midIndex] > searchNumber){
+						maxIndex = midIndex - 1;
+						}
+					else {
+						minIndex = midIndex + 1;
+						}
+					}
+					return alert('Your number doesn\'t exist in this array');
+				}
+	</script>
+	
+	
+	</body>
+	
+</html>

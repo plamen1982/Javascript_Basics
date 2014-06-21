@@ -1,0 +1,23 @@
+<!DOCTYPE html />
+<html>
+	<head>
+	<title>Any third Digit</title>
+	</head>
+	<body>
+		<input type="text" id="digit"/>Digit
+		<button type="button" id="show" onclick="isThirdDigitSeven()">Third digit 7?</button>
+		<script type="text/javascript">
+			function isThirdDigitSeven(){
+				var digit = document.getElementById("digit").value;
+				var dividedByOneHundred= digit/100;
+				var roundDown = Math.floor(dividedByOneHundred);
+				if (roundDown%10===7) {
+					alert('Yes it is 7')
+					}
+				else{
+					alert('No it is not 7')
+				}
+			}
+		</script>
+	</body>
+</html>

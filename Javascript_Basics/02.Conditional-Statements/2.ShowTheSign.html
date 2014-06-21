@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<p>Check the sign of the product of these three numbers</p>
+		<input type="text" id="firstNumber">first number</br>
+		<input type="text" id="secondNumber">second number</br>
+		<input type="text" id="thirdNumber">third number</br>
+		<button type="button" onclick="showSign()">Check</button>
+		<script type="text/javascript">
+			function showSign(){
+				var firstNumber = document.getElementById('firstNumber').value; 
+				var secondNumber = document.getElementById('secondNumber').value; 
+				var thirdNumber = document.getElementById('thirdNumber').value; 
+				var counter = 0;
+				if( firstNumber < 0){
+					counter++;
+					if(secondNumber < 0){
+					counter++;
+						if(thirdNumber < 0){
+							counter++;
+						}
+					}
+					else {
+						if(thirdNumber < 0){
+							counter++;
+						}
+					}
+				}
+				else if( secondNumber < 0){
+					counter++;
+						if(thirdNumber < 0){
+							counter++;
+						}
+				}
+				else {
+					if ( thirdNumber < 0){
+						counter++;
+					}
+				}
+				if(counter%2===0){
+					alert('The sign is \'+\'');
+				}
+				else{
+					alert('The sign is\'-\'');
+				}
+			}
+		</script>
+	
+	</body>
+</html>

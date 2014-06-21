@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<p>Sort your three numbers in descend order</p>
+		<input type="text" id="firstNumber">first number</br>
+		<input type="text" id="secondNumber">second number</br>
+		<input type="text" id="thirdNumber">third number</br>
+		<button type="button" onclick="descendSord()">Sort</button>
+		<script type="text/javascript">
+			function descendSord(){
+				var firstNumber = parseInt(document.getElementById('firstNumber').value); 
+				var secondNumber = parseInt(document.getElementById('secondNumber').value); 
+				var thirdNumber = parseInt(document.getElementById('thirdNumber').value); 
+				var firstInSort;
+				var secondInSort;
+				var thirdInSort;
+				if (firstNumber === secondNumber && firstNumber == thirdNumber){
+					alert('These numbers are equal');
+				}
+				else{
+					if (firstNumber > secondNumber){
+					thirdInSort = secondNumber ;	
+							if( secondNumber > thirdNumber){
+									thirdInSort = thirdNumber;
+									secondInSort = secondNumber;
+									firstInSort = firstNumber;
+							}
+							else if(firstNumber > thirdNumber) {
+								firstInSort = firstNumber;
+								secondInSort = thirdNumber;
+							}
+							else {
+								secondInSort = firstNumber;
+								thirdInSort = secondNumber;
+								firstInSort = thirdNumber;
+							}
+						}
+					else {
+							thirdInSort = firstNumber;
+							if(firstNumber > thirdNumber){
+								thirdInSort = thirdNumber;
+								secondInSort = firstNumber;
+								firstInSort = secondNumber;
+							}
+							else if(secondNumber > thirdNumber) {
+								secondInSort = thirdNumber;
+								firstInSort = secondNumber;
+							}
+							else {
+								firstInSort = thirdNumber;
+								secondInSort = secondNumber;
+							}
+						}
+						alert('Descend order: ' + firstInSort + ', ' + secondInSort + ', ' + thirdInSort);
+					}
+				}
+		</script>
+	
+	</body>
+</html>

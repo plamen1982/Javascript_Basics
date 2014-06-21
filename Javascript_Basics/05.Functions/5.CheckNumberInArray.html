@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+
+		<p>enter the integer and you will see how many times is repeated in the 
+			follow array[1,2,3,4,5,1,2,3,4,5,3,4,5,4,3,2,1,2,3,6]</p>
+	
+		<input type="text" id ="number">
+		<button onclick="checkNumber()">Search</button>
+
+		<p id="result"></p>
+		<script>
+			function checkNumber()
+			{	
+				var test = document.getElementById('number').value;
+				notInteger = false;
+				testInput(test);
+				if(notInteger == true){
+					return;
+				}
+				var number = parseInt(document.getElementById('number').value);
+				var numberForTest = document.getElementById('number').value;
+				var array = new Array(1,2,3,4,5,1,2,3,4,5,3,4,5,4,3,2,1,2,3,6);
+				var count = 0;
+				var i;
+				for (i=0; i < array.length; i++){
+					if(number === parseInt(array[i])){
+						count++;
+					}
+				}
+				var result = document.getElementById('result');
+				result.innerHTML = 'The number ' + number +' is repeated '  + count + ' times into the array'
+			}
+			
+				function testInput(testNumber){
+					if (testNumber == null || testNumber == ""  || isNaN(testNumber) || parseInt(testNumber) !== parseFloat(testNumber))
+					{
+					notInteger = true;
+				   alert('Incorrect input, please don\'t leave empty space into the text field and please insert integer!');
+					}
+				}
+			
+				
+			</script>
+
+	</body>
+</html>

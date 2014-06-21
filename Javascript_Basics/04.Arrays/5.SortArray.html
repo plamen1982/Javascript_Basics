@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+	<p> Enter sequence of elements(0-9) to be sort. Example: {3,2,3,4,2,2,4} Result {2,2,2,3,3,4,4}.
+</p>
+	<p> Please DON'T enter white space between you numbers and commas!</p>
+
+
+	<input type="text" id="randomArray"/>
+	<button type="button" onclick="sortArray()">Find!</button>
+	</br>
+	<p id="result"></p>
+	<script type="text/javascript">
+		function sortArray() {
+
+			//Check for white spaces
+			var patt=/ /;
+			var array = document.getElementById('randomArray').value;
+			if (patt.test(array)){
+				alert("There is a white space, please double check!");
+			}
+			
+			else {
+			// Counters in for-loops 
+			var i, j, k, a;   
+			
+			var smalestValue; 
+			var result = document.getElementById('result');
+			
+			// Split the sequence of string numbers into array of chars
+			array.split(',');
+			
+			// Separate commas from the array, and parse from string to integers in new array
+			var temp = new Array();
+			for (a = 0; a < array.length; a++){
+				if(a%2 == 0){
+					temp[a/2] = parseInt(array[a]);
+				}
+			}
+			
+			//Sorting the array
+			for (i = 0; i < temp.length - 1; i++){
+			
+				for( j = i + 1; j < temp.length; j++){
+					if(temp[i] > temp[j]){		
+						smalestValue = temp[j];
+						temp[j] = temp[i];
+						temp[i] = smalestValue;
+					}	
+				}
+			}
+				}	
+			// Print the result
+			result.innerHTML = 'The new sorted array is: ' + temp.join(', ');
+			}
+	</script>
+	
+	
+	</body>
+	
+</html>

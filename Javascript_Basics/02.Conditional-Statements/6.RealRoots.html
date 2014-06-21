@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<p id="result">Eneter a, b and c, for ax<sup>2</sup> + bx + c </p>
+		<input type="text" id="a">a</br>
+		<input type="text" id="b">b</br>
+		<input type="text" id="c">c</br>
+		<button type="button" onclick="realRoots()">Sort</button>
+		<script type="text/javascript">
+			function realRoots(){
+				var a = parseInt(document.getElementById('a').value);
+				var b = parseInt(document.getElementById('b').value);
+				var c = parseInt(document.getElementById('c').value);
+				var d = Math.pow(b,2) + (-4*a*c);
+				var e = Math.pow(b,2) ;
+				var x1;
+				var x2;
+				if(d < 0){
+					alert('D is: ' + d +'that\'s way there is no real roots');
+				}
+				else if (d === 0){		
+					x1 = - b/2*a;
+					alert('D is zero, that\'s mean only one real root with value: ' + x1);
+				}
+				else{
+					x1= (-b + Math.sqrt(d))/2*a;
+					x2= (b + Math.sqrt(d))/2*a;
+					alert('The real roots are x1 = ' + x1 + ' and x2 = ' + x2);
+				}
+			}
+		</script>
+	
+	</body>
+</html>

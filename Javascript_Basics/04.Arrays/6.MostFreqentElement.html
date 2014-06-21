@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+	<p> Enter sequence of elements(0-9), separated by commas to find the most frequent element.</p> 
+	<p> Example:4,1,1,4,2,3,4,4,1,2,4,9,3; Result : The most frequent number is: 4 and is in the sequence 5 times;</p>
+	<p> Please DON'T enter white space between you numbers and commas!</p>
+
+	<input type="text" id="randomArray"/>
+	<button type="button" onclick="findMostFrequentEl()">Find!</button>
+	</br>
+	<p id="result"></p>
+	<script type="text/javascript">
+		function findMostFrequentEl() {
+			
+			//Check for white spaces
+			var patt=/ /;
+			var array = document.getElementById('randomArray').value;
+			if (patt.test(array)){
+				alert("There is a white space, please double check!");
+			}
+			
+			else {
+			
+			var bestCount = 1;
+			var count = 1;
+			var mostFrequentNum;
+			var minNumber = Number.MIN_VALUE;
+			var result = document.getElementById('result');
+			// Counters in for-loops 
+			var i, j;
+			
+			var result = document.getElementById('result');
+			
+			// Split the sequence of string numbers into array of chars
+			array.split(',');
+			
+			// Separate commas from the array, and parse from string to integers in new array
+			var temp = new Array();
+			for (a = 0; a < array.length; a++){
+				if(a%2 == 0){
+					temp[a/2] = parseInt(array[a]);
+				}
+			}
+			
+			//Find the most frequent number 
+			for (i = 0; i < temp.length - 1; i++){
+				for(j = i + 1; j < temp.length; j++) {
+					if(temp[i] === temp[j]){
+					
+					//if the current element is minNumber just skip it
+					if(temp[i] === minNumber){
+					} 
+					else {	count += 1;
+						temp[j] = minNumber;
+							if (bestCount < count){
+								bestCount = count;
+								mostFrequentNum = temp[i];
+							}
+						}
+					} 
+				}
+					count = 1;
+			}
+				result.innerHTML = 'The most frequent number is: ' + mostFrequentNum + ' and is in the sequence ' + bestCount + ' times';
+		}
+	}
+	</script>
+	
+	
+	</body>
+	
+</html>

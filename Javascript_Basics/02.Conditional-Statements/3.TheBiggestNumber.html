@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<p>Check the biggest number of these three numbers</p>
+		<input type="text" id="firstNumber">first number</br>
+		<input type="text" id="secondNumber">second number</br>
+		<input type="text" id="thirdNumber">third number</br>
+		<button type="button" onclick="biggestNumber()">Check the biggest number</button>
+		<script type="text/javascript">
+			function biggestNumber(){
+				var firstNumber = parseInt(document.getElementById('firstNumber').value); 
+				var secondNumber = parseInt(document.getElementById('secondNumber').value); 
+				var thirdNumber = parseInt(document.getElementById('thirdNumber').value); 
+				if(firstNumber === secondNumber && firstNumber === thirdNumber){ 
+				alert('These three numbers are equal');
+				}
+				else {
+					if(firstNumber > secondNumber){
+						if(firstNumber > thirdNumber){
+							alert('The biggest number is: ' + firstNumber);
+						}
+						else{
+							alert('The biggest number is: ' + thirdNumber);						
+						}
+					}
+					else if(secondNumber > thirdNumber){
+							alert('The biggest number is: ' + secondNumber);
+					}
+					else {
+							alert('The biggest number is: ' + thirdNumber);					
+					}
+				}	
+			}				
+		</script>
+	
+	</body>
+</html>

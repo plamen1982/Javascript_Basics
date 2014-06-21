@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+
+
+		<p> See the index of the first biggest element between its neighbors in the 
+		following array : [4,4,4,5,4,4,4,5,4,4]</p>
+		<button onclick="checkNeighbors()">Click</button>
+
+		<p id="result"></p>
+		<script>
+			function checkNeighbors()
+			{	
+				var index;
+				var array = [4,4,4,5,4,4,4,5,4,4];
+				var result = document.getElementById('result');
+				var i;
+
+				for(i = 0; i < array.length - 1; i++){
+						if(array[i] > array[i + 1] && array[i] > array[i-1]){
+							index = i;
+							break;
+						}
+						else{
+							index = -1;
+						}
+					}	
+				result.innerHTML = index;
+			}
+			</script>
+
+	</body>
+</html>

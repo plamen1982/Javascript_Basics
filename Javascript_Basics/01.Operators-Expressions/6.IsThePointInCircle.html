@@ -1,0 +1,27 @@
+<!DOCTYPE html />
+<html>
+	<head>
+	<title>Is the point in the circle</title>
+	</head>
+	<body>
+		<input type="text" id="x"/>x
+		<input type="text" id="y"/>y
+		<button type="button" onclick="checkPoint()">Check</button>
+			<script type="text/javascript">
+				function checkPoint(){
+					var x = document.getElementById("x").value;
+					var y = document.getElementById("y").value;
+					var h = Math.sqrt(x^2 + y^2);
+					
+					if(x < 5 && x > -5 && y < 5 && y > -5) {
+						if(h <= 5){
+					 alert('Your point is in the circle with coordinates 0 and 5')
+						}
+					}  			
+					else{
+						alert('Your point is not in the circle with coordinates 0 and 5')
+					}
+				}
+			</script>
+	</body>
+</html>

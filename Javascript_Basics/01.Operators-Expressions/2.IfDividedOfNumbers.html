@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Divided on 5 and 7</title>
+	</head>
+	<body>
+		<input type="text" id="number"/>
+		<button type="button" onclick="ifDividedOnFiveAndSeven()">Divided on 5 and 7 without remainder?</button>
+		<script type="text/javascript">
+			function ifDividedOnFiveAndSeven(){
+				var checkedNumber=document.getElementById("number").value;
+				if(checkedNumber==0){
+				alert('Please, enter valid number, zero is not a valid number!')}
+				else{
+				if(checkedNumber%5===0&&checkedNumber%7===0){
+					alert('Yes,it is divided on 5 and 7 without remainder')
+				}
+				else{
+				alert('No, it is not divided on 5 and 7 without remainder')
+			}
+		}
+	}
+		</script>
+	</body>
+</html>

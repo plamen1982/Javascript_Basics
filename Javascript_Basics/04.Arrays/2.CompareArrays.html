@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+	<p> Please, enter a two words and they will be compared lexicographically (letter by letter).</p>
+
+	<input type="text" id="firstArray"/>
+	<input type="text" id="secondArray"/>
+	<button type="button" onclick="checkByChars()">Compare!</button>
+	</br>
+	<p id="result"></p>
+	<script type="text/javascript">
+		function checkByChars() {
+			var result = document.getElementById('result');
+			var firstArray = document.getElementById('firstArray').value;
+			var secondArray = document.getElementById('secondArray').value;
+			var length, i, smaller;
+			
+			//We're going to compare only existing chars
+			
+			if (firstArray.length <= secondArray.length){
+				length = firstArray.length;
+			}
+			else {
+				length = secondArray.length;
+			}
+			
+			//Compare the first chars of the arrays
+			
+			for(i = 0; i < length; i++){
+				if(firstArray[i] < secondArray[i]){
+					smaller = firstArray;
+					result.innerHTML = 'Lexicographically the smaller arrays with chars is: '  +   smaller;
+					break;
+				}
+				else if(firstArray[i] > secondArray[i]){
+					 smaller = secondArray;
+					result.innerHTML = 'Lexicographically the smaller arrays with chars is: '  +   smaller;
+					break;
+				}
+				else {
+					result.innerHTML = 'The first ' + length + ' chars are euqal!';
+				}
+			}
+		}
+		
+	</script>
+	
+	
+	</body>
+	
+</html>

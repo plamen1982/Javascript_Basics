@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<p>Please, insert only integers</p>
+		<input type="text" id="firstNumber">first number</br>
+		<input type="text" id="secondNumber">second number</br>
+		<button type="button" onclick="compareNumbers()">compare</button>
+		<script type="text/javascript">
+			function compareNumbers(){
+				var firstNumber = parseInt(document.getElementById('firstNumber').value);
+				var secondNumber = parseInt(document.getElementById('secondNumber').value);
+				var mask;
+				if (firstNumber > secondNumber){
+					mask = firstNumber ;
+					firstNumber = secondNumber;
+					secondNumber = mask;
+					alert('Now the value of the first number is: ' + firstNumber + ' and the value of the second number is: ' 
+					+ secondNumber);
+				}
+				else if(secondNumber > firstNumber){
+					mask = secondNumber;
+					secondNumber = firstNumber;
+					firstNumber = mask;
+					alert('Now the value of the first number is: ' + firstNumber + ' and the value of the second number is: '
+					+ secondNumber);
+				}
+				else {
+					alert('These numbers are equal');
+				}
+			}
+		</script>
+	
+	</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+	<p> Enter sequence of elements(0-9) in an array. Example: {2,1,1,2,3,3,2,2,2,1} Result: {2,2,2}.</p>
+	<p> Please DON'T enter white space between you numbers and commas!</p>
+
+	<input type="text" id="randomArray"/>
+	<button type="button" onclick="findBiggestSequence()">Find!</button>
+	</br>
+	<p id="result"></p>
+	<script type="text/javascript">
+		function findBiggestSequence() {
+		
+			//Check for white spaces
+			var patt=/ /g;
+			var array = document.getElementById('randomArray').value;
+			if (patt.test(array)){
+				alert("There is a white space, please double check!");
+			}
+			else {
+			// Counters in for-loops 
+			var i, j, k, a, start;   
+			
+			var bestStart = 0;
+			var bestLength = 1;
+			var length = 1;
+			var arrayForResult  = new Array();
+			var result = document.getElementById('result');
+			
+			// Split the sequence of string numbers into array of chars
+			array.split(',');
+			
+			// Separate commas from the array, and parse from string to integers in new array
+			var temp = new Array();
+			for (a = 0; a < array.length; a++){
+				if(a%2 == 0){
+					temp[a/2] = parseInt(array[a]);
+				}
+			}
+			
+			// Finding the biggest subsequence from the new array
+			for (i = 0; i < temp.length - 1; i++){
+				if(temp[i] === temp[i + 1]){
+					start = i ;
+					length += 1;
+					if(length > bestLength){
+						bestLength = length;
+						bestStart = (start + 1) - (length - 1) ;
+					}
+				}
+				else {
+						length = 1;
+				}
+			}
+			
+			// Print the result
+			for (j = bestStart, k = 0; j < bestStart + bestLength ; j++, k++){
+				 arrayForResult[k] = temp[j];	
+				}
+			result.innerHTML = 'The biggest sub sequence is from  ' + bestLength + ' elements ' + ' and they are: ' + arrayForResult.join(', ') +
+			' and they start from the ' + (bestStart + 1) + ' element' ;
+		}
+	}
+	</script>
+	
+	
+	</body>
+	
+</html>
