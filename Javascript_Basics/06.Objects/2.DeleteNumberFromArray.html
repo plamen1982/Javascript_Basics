@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+
+
+	<input type="text" id="number"/>
+	<button type="button" onclick="myFunction()">Delete!</button>
+	</br>
+	<p id="result"></p>
+	<script type="text/javascript">
+		
+	var arr = [1,2,3,4,5,'1'];
+
+	Array.prototype.myUcase = function(number) {
+		this.number = number;
+		for (i = 0; i < this.length; i++) {
+			if(this[i] === this.number){
+			arr.splice(i,1);
+	       }
+		}
+  return arr;
+}
+			function myFunction(){
+			var result = document.getElementById('result');
+			var number = parseInt(document.getElementById('number').value, 10);			
+			arr.myUcase(number);
+			result.innerHTML = arr;
+			}
+
+	</script>
+	
+	
+	</body>
+	
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+
+	<button onclick = "print()" >Click</button> 
+	<p id="result"></p>
+	<input type = "text" id="element"></input>
+	<script type="text/javascript">
+    var john = {
+    age: 22,
+    name: 'John Smith',
+    hobbies: ['surfing', 'diving']
+};
+	
+    function objToString (obj, length) {
+        this.obj = obj;
+        this.length = length;
+        var trueValue = false;
+        for (var p in obj) {
+            if (obj.hasOwnProperty(p)) {
+                if( this.length == p ){
+                    trueValue = true;
+		   }
+        }
+    }
+    return trueValue;
+}
+        function print() {
+            var element = document.getElementById('element').value;
+            var result = document.getElementById('result');
+            result.innerHTML = objToString(john, element);   
+    }
+	</script>
+	
+	
+	</body>
+	
+</html>

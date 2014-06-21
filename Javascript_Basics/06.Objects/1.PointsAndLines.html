@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+
+		<table border="1">
+			<tr>
+				<td rowspan ="2">Line1:</td>
+				<td>Point1: </td>
+				<td>x1<input type="text" id="x1"></td>
+				<td>y1<input type="text" id="y1"></td>	
+				<td rowspan ="2">distance between these two points is:<p id="resut1"></p></td>	
+			</tr>
+			<tr>
+				<td>Point2: </td>
+				<td>x2<input type="text" id="x2"></td>
+				<td>y2<input type="text" id="y2"></td>	
+			</tr>
+			<tr>
+				<td rowspan ="2">Line2:</td>
+				<td>Point3: </td>
+				<td>x3<input type="text" id="x3"></td>
+				<td>y3<input type="text" id="y3"></td>
+				<td rowspan ="2">distance between these two points is:<p id="resut2"></p></td>	
+			</tr>
+			<tr>
+				<td>Point4: </td>
+				<td>x4<input type="text" id="x4"></td>
+				<td>y4<input type="text" id="y4"></td>					
+			</tr>			
+			<tr>
+				<td rowspan ="2">Line3:</td>
+				<td>Point5: </td>
+				<td>x5<input type="text" id="x5"></td>
+				<td>y5<input type="text" id="y5"></td>	
+				<td rowspan ="2">distance between these two points is:<p id="resut3"></p></td>	
+			</tr>
+			<tr>
+				<td>Point6: </td>
+				<td>x6<input type="text" id="x6"></td>
+				<td>y6<input type="text" id="y6"></td>					
+			</tr>
+			<button id="printResults()" onclick="printResults()">Results!</button>
+		</table>
+
+		<p id="result"></p>
+		<script>
+			
+		function distanceBetweenTwoPoints(pointX1, pointY1, pointX2, pointY2) {
+				return {
+					pointX1: pointX1,
+					pointY1: pointY1,
+					pointX2: pointX2,
+					pointY2: pointY2,					
+					toString: function getHypotenuse() {
+					var coordX = this.pointX1 - this.pointX2;
+					var coordY = this.pointY1 - this.pointY2;
+					
+					return 	Math.sqrt((Math.pow((coordX),2) + 
+					Math.pow((coordY),2)),2); 
+								
+						}	
+					};
+				}
+			
+
+		function printResults(){
+					//Line 1
+					var x1 = Number(document.getElementById('x1').value);
+				    var y1 = Number(document.getElementById('y1').value);					
+					var x2 = Number(document.getElementById('x2').value);
+				    var y2 = Number(document.getElementById('y2').value);
+					
+				   
+					//Line 2
+					var x3 = Number(document.getElementById('x3').value);
+					var y3 = Number(document.getElementById('y3').value);	
+					var x4 = Number(document.getElementById('x4').value);
+				    var y4 = Number(document.getElementById('y4').value);
+					
+				
+					//Line 3
+					var x5 = Number(document.getElementById('x5').value);
+				    var y5 = Number(document.getElementById('y5').value);
+					var x6 = Number(document.getElementById('x6').value);
+					var y6 = Number(document.getElementById('y6').value);		
+					
+					var l1 = distanceBetweenTwoPoints(x1,y1,x2,y2);
+					var l2 = distanceBetweenTwoPoints(x3,y3,x4,y4);
+					var l3 = distanceBetweenTwoPoints(x5,y5,x6,y6);
+
+				
+					var print1 = document.getElementById('resut1');
+					print1.innerHTML = l1 ;
+					
+					var print2 = document.getElementById('resut2');
+					print2.innerHTML = l2;	
+
+					var print3 = document.getElementById('resut3');
+					print3.innerHTML = l3;		
+					if (x1 === x2 && y1 === y2 || x3 === x4 && y3 === y4 || x5 === x6 && y5 === y6 ){ 
+					alert('Incorrect input');
+						}
+					else {
+					
+					if(x1 === x6 && y1 === y6 && x3 === x5 && y3 === y5 && x2 === x4 && y2 === y4) {
+						alert('These three lines are incorporate in one triangle');
+					}
+					else if (x1 === x6 && y1 === y6 && x2 === x3 && y2 === y3 && x4 === x5 && y4 === y5){
+						alert('These three lines are incorporate in one triangle');
+							}
+					else if (x1 === x5 && y1 === y5 && x2 === x3 && y2 === y3 && x4 === x6 && y4 === y6){
+						alert('These three lines are incorporate in one triangle');					
+						}
+					else if (x1 === x5 && y1 === y5 && x2 === x4 && y2 === y4 && x3 === x6 && y3 === y6){
+						alert('These three lines are incorporate in one triangle');
+						}
+					else if (x2 === x5 && y2 === y5 && x1 === x4 && y1 === y4 && x3 === x6 && y3 === y6){
+						alert('These three lines are incorporate in one triangle');
+						}
+					else if (x2 === x5 && y2 === y5 && x1 === x3 && y1 === y3 && x4 === x6 && y4 === y6){
+						alert('These three lines are incorporate in one triangle');
+						}	
+					else if (x2 === x6 && y2 === y6 && x1 === x4 && y1 === y4 && x3 === x5 && y3 === y5){
+						alert('These three lines are incorporate in one triangle');
+						}	
+					else if (x2 === x6 && y2 === y6 && x1 === x3 && y1 === y3 && x4 === x5 && y4 === y5){
+						alert('These three lines are incorporate in one triangle');
+						}
+					else{
+						alert('These three lines aren\'t incorporate in one triangle!');
+						}
+					}
+				}
+				
+			
+			</script>
+
+	</body>
+</html>

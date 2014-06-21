@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+    <p>The existing properties are: age, lastname, firstname</p>
+	<input type = "text" id = "property"></input>
+	<button onclick = "print()" >Sort</button> 
+	<p id = "result"></p>
+	<script type="text/javascript">
+    var persons = [
+        {firstname : "Plamen", lastname: "Hristov", age: 31}, 
+        {firstname : "Steven", lastname: "Johnson", age: 81},
+        {firstname : "Brat", lastname: "Pit", age: 45},
+        {firstname : "John", lastname: "Miller", age: 191}
+		];
+    var result = [];
+
+    function findYoungestPerson (obj) {
+        this.obj = obj;
+        for(var i = 0; i < this.obj.length ; i++){
+            result[i]  = this.obj[i].age + ' years old ' + ', first name: ' +  this.obj[i].firstname + '  ,last name: ' + this.obj[i].lastname + '</br> ';
+                }
+            return result;
+            } 
+    function sortOn(property){
+        return function(a, b){
+            if(a[property] < b[property]){
+                return -1;
+            }else if(a[property] > b[property]){
+                return 1;
+            }else{
+                return 0;   
+        }
+    }
+}
+
+    function print() {
+		var inputProperty = document.getElementById('property').value;
+        var results = document.getElementById('result');
+        results.innerHTML = findYoungestPerson(persons.sort(sortOn(inputProperty)));   
+    }
+
+
+
+	</script>
+	
+	</body>
+	
+</html>

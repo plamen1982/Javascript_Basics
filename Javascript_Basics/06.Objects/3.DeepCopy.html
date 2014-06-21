@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<script src="deepCopy.js"></script> 
+	<button onclick = "print()" >Click</button>
+	<p id="result"></p>
+	<script type="text/javascript">
+		
+	var john = {
+	age: 22,
+    name: 'John Smith',
+    hobbies: ['surfing', 'diving']
+};
+	var john2 = owl.deepCopy(john);
+	
+	 john2 = {
+	 age: 31,
+	 name: 'Plamen Hristov',
+	 hobbies: ['gym', 'hiking']
+	 };
+	 var number = 3;
+	 var number3 = owl.deepCopy(number);
+	 function print(){
+	 var result = document.getElementById('result');
+				for(var man in john2){
+						 result.innerHTML += john[man] + '</br>   ' ;
+		};
+	 }
+	</script>
+	
+	
+	</body>
+	
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+
+	<button onclick = "print()" >Click</button> 
+	<p id="result"></p>
+	<input type = "text" id="element"></input>
+	<script type="text/javascript">
+    var persons = [
+        {firstname : "Plamen", lastname: "Hristov", age: 31}, 
+        {firstname : "Steven", lastname: "Johnson", age: 81},
+        {firstname : "Brat", lastname: "Pit", age: 45},
+        {firstname : "John", lastname: "Miller", age: 19}
+		];
+
+	
+    function findYoungestPerson (obj) {
+				this.obj = obj;
+		var theYoungestPerson = this.obj[0].age;
+		var currentPerson = this.obj[0].age;
+            for(var i = 0; i < this.obj.length - 1; i++){
+			    if(this.obj[i].age > this.obj[i+1].age){
+				currentPerson = this.obj[i+1].age;
+				    if(currentPerson < theYoungestPerson){
+					    theYoungestPerson = currentPerson;
+					}
+                }
+				
+            }
+    return theYoungestPerson;
+        }
+        function print() {
+            var result = document.getElementById('result');
+            result.innerHTML = findYoungestPerson(persons);   
+    }
+	</script>
+	
+	
+	</body>
+	
+</html>
