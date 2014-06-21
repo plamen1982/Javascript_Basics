@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+	<p>Please enter text for reverse</p>
+	<input type="text" id="first"><p></p>
+	<button type="button" onclick="printText()">Print reverse text</button>
+	</br>
+	<p id="result"></p>
+	<script type="text/javascript">
+		function printText() {
+			var firstNumber = document.getElementById('first').value;
+			var print = document.getElementById('result');
+			var counter1;
+			var reverseText = new String();
+			for(counter1 = firstNumber.length -1, counter2 = 0; counter1 >= 0; counter1--, counter2++){
+				reverseText[counter2] = firstNumber[counter1];
+				print.innerHTML += reverseText[counter2];
+			}				
+		}
+		
+	</script>
+	
+	
+	</body>
+	
+</html>

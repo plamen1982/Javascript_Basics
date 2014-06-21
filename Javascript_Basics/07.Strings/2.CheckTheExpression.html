@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Ckeck the expression</title>
+</head>
+<body>
+    <input type = "text" id = "textBox">
+    <button  onclick="checkExpression()">check</button>
+    <p id="result"></p>
+    <script>
+        function checkExpression() {
+
+            var leftBrace = '(';
+            var rightBrace = ')';
+            var expression = document.getElementById('textBox').value;
+            var count = 0;
+            var result = document.getElementById('result');
+                //count the number of the braces and if they are odd returns error
+
+                for ( var i = 0; i < expression.length; i++ ){
+
+                    if( expression[i] === leftBrace || expression[i] === rightBrace )  {
+                        count++;
+                    } 
+                }
+                if( count % 2 !== 0) {
+
+                   return result.innerHTML = 'The expression is not valid' ;
+
+                    }
+
+                    var indexForRightBrace;
+                    var indexForLeftBrace;
+
+                    //checking if the first brace is left or right
+
+                    for ( var i = 0; i < expression.length; i++ ) {
+
+                         indexForRightBrace = expression.indexOf( leftBrace );
+                         indexForLeftBrace = expression.indexOf( rightBrace );
+
+                            if ( indexForRightBrace > indexForLeftBrace ) {
+
+                                return result.innerHTML = 'The expression is not valid' ;
+
+            }
+                             else {
+
+                                  return result.innerHTML = 'The expression is valid' ;
+                    }
+                }    
+            }
+    </script>
+
+</body>
+</html>

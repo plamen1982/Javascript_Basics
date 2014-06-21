@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Find sub string</title>
+</head>
+<body>
+    <button  onclick="findSubString()">Find "in" into the text</button>
+    <p>We are living in an yellow submarine. We don't<br>
+have anything else. Inside the submarine is very<br>
+tight. So we are drinking all the day. We will<br>
+move out of it in 5 days.<p>
+    <p id="result"></p>
+    <script>
+            var str = 'We are living in an yellow submarine. We don\'t have anything else. Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days.';
+            var result = document.getElementById('result');
+            var count = 0;
+
+        function findSubString() {
+
+            //count the syllybles 'in' into the text
+
+            for (var i = 0; i < str.length - 1; i++ ){
+               var temp = str[i] + str [i + 1]
+               if (temp === 'in' || temp ==='In'){
+                count++;
+               }
+                temp ="";
+            }
+            result.innerHTML ='The syllable \"in\"  is find ' + count + ' times in the text';
+        }
+              
+    </script>
+
+</body>
+</html>
