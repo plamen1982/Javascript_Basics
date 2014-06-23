@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>New Html tags</title>
+</head>
+<body>
+    <p>Please, insert the test with the new html tags</p>
+     <!-- <textarea rows = 5 cols = 30  id = "textBox" ></textarea><br> -->
+   <button  onclick="checkExpression()">Change the style</button> 
+    <p id="result"></p>
+
+    <script>
+
+       //var expression = document.getElementById('textBox').value;
+        var expression = 'We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>.We <mixcase>don\'t</mixcase> have <lowcase>anything</lowcase> else.';
+        // number of the index of the first
+        var firstIndexForTheUpperCase;
+        var secondIndexForTheUpperCase;
+        var firstIndexForTheLowerCase;
+        var secondIndexForTheLowerCase;
+        var firstIndexForTheMixCase;
+        var secondIndexForTheMixCase;
+
+        // The new styled stringes
+        var newUpperCase;
+        var newLoweCase;
+        var newMixCase;
+        var resultForNewMixCase = new String ('');
+
+        var upcase = 'upcase';
+        var mixcase = 'mixcase';
+        var lowcase = 'lowcase';
+        var result = document.getElementById('result');
+
+       function customHtmlTags() {
+
+           // alert('since now everything looks fine');
+
+           // checking for existence of the new tag(upcase) and save it in new string
+
+        firstIndexForTheUpperCase = expression.indexOf(upcase);
+        secondIndexForTheUpperCase = expression.indexOf(upcase,firstIndexForTheUpperCase + 1);
+        newUpperCase = expression.substring(firstIndexForTheUpperCase + upcase.length + 1,secondIndexForTheUpperCase - 2).toUpperCase();
+
+           // checking for existence of the new tag(lowercase) and save it in new string
+
+        firstIndexForTheLowerCase = expression.indexOf(lowcase);
+        secondIndexForTheLowerCase = expression.indexOf(lowcase, firstIndexForTheLowerCase + 1);
+        newLoweCase = expression.substring(firstIndexForTheLowerCase + lowcase.length + 1, secondIndexForTheLowerCase - 2).toLowerCase();
+
+
+           // checking for existence of the new tag(mixcase) and save it in new string
+
+           firstIndexForTheMixCase = expression.indexOf(mixcase);
+           secondIndexForTheMixCase = expression.indexOf(mixcase, firstIndexForTheMixCase + 1);
+           newMixCase = expression.substring(firstIndexForTheMixCase + mixcase.length + 1, secondIndexForTheMixCase - 2);
+
+           //every even char to upper case, and every odd char to lower case for the mixcase's tag
+
+           for ( var i = 0; i < newMixCase.length; i++ ){
+                    if( i%2 == 0){
+                            resultForNewMixCase[i] = newMixCase[i].toUpperCase();
+
+                }
+                    else {
+                        resultForNewMixCase[i] = newMixCase[i].toLowerCase();
+                    }
+           }
+        result.innerHTML = ' newUpperCase - ' + newUpperCase + ' </br> newLoweCase - ' + newLoweCase  + '</br> newMixCase - ' + resultForNewMixCase.toString();
+        } 
+
+        function checkExpression() {
+
+            var leftTag = '<';
+            var rightTag = '>';
+            var count = 0;
+            var ifTagsClosed = false;
+            var result = document.getElementById('result');
+
+                //count the number of the tags and if they are odd returns error
+
+                for ( var i = 0; i < expression.length; i++ ){
+
+                    if( expression[i] === leftTag || expression[i] === rightTag )  {
+                        count++;
+                    } 
+                }
+                if( count % 2 !== 0) {
+
+                   return result.innerHTML = 'The expression is not valid' ;
+
+                    }
+
+                    var indexForrightTag;
+                    var indexForleftTag;
+
+                    //checking if the first brace is left or right
+
+                    for ( var i = 0; i < expression.length; i++ ) {
+
+                         indexForrightTag = expression.indexOf( leftTag );
+                         indexForLeftBrace = expression.indexOf( rightTag );
+
+                            if ( indexForrightTag > indexForLeftBrace ) {
+
+                                return result.innerHTML = 'The expression is not valid' ;
+
+            }
+                             else {
+
+                                    ifTagsClosed = true ;
+                    }
+
+                }    
+                // calling the customHtmlTags function to modify the content of the tags
+
+                    if( ifTagsClosed == true) {
+                        customHtmlTags();
+                    }
+            }  
+
+    </script>
+
+</body>
+</html>
