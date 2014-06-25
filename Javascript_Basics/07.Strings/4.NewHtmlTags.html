@@ -1,78 +1,98 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>New Html tags</title>
 </head>
 <body>
     <p>Please, insert the test with the new html tags</p>
-     <!-- <textarea rows = 5 cols = 30  id = "textBox" ></textarea><br> -->
+    <p>You can try our example below, or you can create your own</p>
+    <p>We are &lt;mixcase&gt;living&lt;&#47;mixcase&gt; in a &lt;upcase&gt;yellow submarine&lt;&#47;upcase&gt;.We &lt;mixcase&gt;don&#39;t&lt;&#47;mixcase&gt; have &lt;lowcase&gt;anything&lt;&#47;lowcase&gt; else.</p>
+     <textarea rows = 5 cols = 30  id = "textBox" ></textarea><br> 
    <button  onclick="checkExpression()">Change the style</button> 
     <p id="result"></p>
 
     <script>
 
-       //var expression = document.getElementById('textBox').value;
-        var expression = 'We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>.We <mixcase>don\'t</mixcase> have <lowcase>anything</lowcase> else.';
-        // number of the index of the first
-        var firstIndexForTheUpperCase;
-        var secondIndexForTheUpperCase;
-        var firstIndexForTheLowerCase;
-        var secondIndexForTheLowerCase;
-        var firstIndexForTheMixCase;
-        var secondIndexForTheMixCase;
-
-        // The new styled stringes
-        var newUpperCase;
-        var newLoweCase;
-        var newMixCase;
-        var resultForNewMixCase = new String ('');
-
-        var upcase = 'upcase';
-        var mixcase = 'mixcase';
-        var lowcase = 'lowcase';
+        var expression;
         var result = document.getElementById('result');
 
-       function customHtmlTags() {
+       function customHtmlTags() {    //it doesn't work for multiple tag elements
+        
+            var firstIndexForTheUpperCase;
+            var secondIndexForTheUpperCase;
+            var firstIndexForTheLowerCase;
+            var secondIndexForTheLowerCase;
+            var firstIndexForTheMixCase;
+            var secondIndexForTheMixCase;
 
-           // alert('since now everything looks fine');
+            // The new styled strings
+            var newUpperCase;
+            var newLoweCase;
+            var newMixCase;
 
-           // checking for existence of the new tag(upcase) and save it in new string
+            //The old strings that need to be replaced
+            var oldUpperCase;
+            var oldLowerCase;
+            var oldMixCase;
+            var resultForNewMixCase = [];
 
-        firstIndexForTheUpperCase = expression.indexOf(upcase);
-        secondIndexForTheUpperCase = expression.indexOf(upcase,firstIndexForTheUpperCase + 1);
-        newUpperCase = expression.substring(firstIndexForTheUpperCase + upcase.length + 1,secondIndexForTheUpperCase - 2).toUpperCase();
+            var upcase = 'upcase';
+            var mixcase = 'mixcase';
+            var lowcase = 'lowcase';
+            var ifCorrectNames = false;
+                   // alert('since now everything looks fine');
 
-           // checking for existence of the new tag(lowercase) and save it in new string
+               // checking for existence of the new tag(upcase) and save it in new string
 
-        firstIndexForTheLowerCase = expression.indexOf(lowcase);
-        secondIndexForTheLowerCase = expression.indexOf(lowcase, firstIndexForTheLowerCase + 1);
-        newLoweCase = expression.substring(firstIndexForTheLowerCase + lowcase.length + 1, secondIndexForTheLowerCase - 2).toLowerCase();
+            firstIndexForTheUpperCase = expression.indexOf(upcase);
+            secondIndexForTheUpperCase = expression.indexOf(upcase,firstIndexForTheUpperCase + 1);
+            oldUpperCase = expression.substring(firstIndexForTheUpperCase + upcase.length + 1,secondIndexForTheUpperCase - 2);
+            newUpperCase = expression.substring(firstIndexForTheUpperCase + upcase.length + 1,secondIndexForTheUpperCase - 2).toUpperCase();
+
+               // checking for existence of the new tag(lowercase) and save it in new string
+
+            firstIndexForTheLowerCase = expression.indexOf(lowcase);
+            secondIndexForTheLowerCase = expression.indexOf(lowcase, firstIndexForTheLowerCase + 1);
+            oldLowerCase = expression.substring(firstIndexForTheLowerCase + lowcase.length + 1, secondIndexForTheLowerCase - 2);
+            newLoweCase = expression.substring(firstIndexForTheLowerCase + lowcase.length + 1, secondIndexForTheLowerCase - 2).toLowerCase();
 
 
-           // checking for existence of the new tag(mixcase) and save it in new string
+               // checking for existence of the new tag(mixcase) and save it in new string
 
-           firstIndexForTheMixCase = expression.indexOf(mixcase);
-           secondIndexForTheMixCase = expression.indexOf(mixcase, firstIndexForTheMixCase + 1);
-           newMixCase = expression.substring(firstIndexForTheMixCase + mixcase.length + 1, secondIndexForTheMixCase - 2);
+               firstIndexForTheMixCase = expression.indexOf(mixcase);
+               secondIndexForTheMixCase = expression.indexOf(mixcase, firstIndexForTheMixCase + 1);
+               oldMixCase = expression.substring(firstIndexForTheMixCase + mixcase.length + 1, secondIndexForTheMixCase - 2);
+               newMixCase = expression.substring(firstIndexForTheMixCase + mixcase.length + 1, secondIndexForTheMixCase - 2);
 
-           //every even char to upper case, and every odd char to lower case for the mixcase's tag
+               //every even char to upper case, and every odd char to lower case for the mixcase's tag
 
-           for ( var i = 0; i < newMixCase.length; i++ ){
-                    if( i%2 == 0){
-                            resultForNewMixCase[i] = newMixCase[i].toUpperCase();
+               for ( var i = 0; i < newMixCase.length; i++ ){
+                        if( i%2 == 0){
+                                resultForNewMixCase[i] = newMixCase[i].toUpperCase();
 
-                }
-                    else {
-                        resultForNewMixCase[i] = newMixCase[i].toLowerCase();
                     }
-           }
-        result.innerHTML = ' newUpperCase - ' + newUpperCase + ' </br> newLoweCase - ' + newLoweCase  + '</br> newMixCase - ' + resultForNewMixCase.toString();
-        } 
+                        else {
+                            resultForNewMixCase[i] = newMixCase[i].toLowerCase();
+                        }
+               }
+                     
+
+                displayOnWebPageForUpCase = expression.replace(oldUpperCase, newUpperCase);
+                displayOnWebPageForLowCase = displayOnWebPageForUpCase.replace(oldLowerCase, newLoweCase);
+                displayOnWebPageForMixCase = displayOnWebPageForLowCase.replace(oldMixCase, resultForNewMixCase.join(''));
+                result.innerHTML = displayOnWebPageForMixCase;
+            } 
+
+
+
+
 
         function checkExpression() {
 
+            expression = document.getElementById('textBox').value;
             var leftTag = '<';
             var rightTag = '>';
+            var slash ='/';
             var count = 0;
             var ifTagsClosed = false;
             var result = document.getElementById('result');
@@ -91,33 +111,101 @@
 
                     }
 
-                    var indexForrightTag;
+                    var indexForRightTag;
                     var indexForleftTag;
+                    var boolUpcase =  false;
+                    var boolLowcase = false;
+                    var boolMixcase = false;
 
                     //checking if the first brace is left or right
 
                     for ( var i = 0; i < expression.length; i++ ) {
 
-                         indexForrightTag = expression.indexOf( leftTag );
+                         indexForRightTag = expression.indexOf( leftTag);
                          indexForLeftBrace = expression.indexOf( rightTag );
-
-                            if ( indexForrightTag > indexForLeftBrace ) {
+                                boolUpcase =  checkTagsNames('upcase');
+                                boolLowcase = checkTagsNames('lowcase');
+                                boolMixcase = checkTagsNames('mixcase');
+                            if ( indexForRightTag > indexForLeftBrace ) {
 
                                 return result.innerHTML = 'The expression is not valid' ;
+                               
+                            }
 
-            }
-                             else {
+                                         else {
 
-                                    ifTagsClosed = true ;
-                    }
+                                                ifTagsClosed = true ;
+                                }
 
                 }    
+
                 // calling the customHtmlTags function to modify the content of the tags
 
-                    if( ifTagsClosed == true) {
+                    if( ifTagsClosed == true && boolUpcase == true && boolUpcase == true && boolMixcase == true) {
                         customHtmlTags();
                     }
+                    else { 
+                        return result.innerHTML = 'The expression is not valid' ;
+                    }
             }  
+
+
+
+
+
+            function checkTagsNames(theCase) {
+
+                var result = document.getElementById('result');
+                var leftTag = '<';
+                var rightTag = '>';
+                var slash = '/';
+                var currentIndex = 0;
+                var oldIndex = 0;
+                var count = 0;
+                var slashIndex = 0;
+
+                    for ( var i = 0; i < expression.length; i++ ){
+
+                        oldIndex = currentIndex;                    // to make distinguish between old and new the match
+
+                        if (currentIndex == -1) {                    // if we can't find the match, getting out of the loop 
+                      
+                        break;
+                }            
+                        currentIndex = expression.indexOf(theCase, currentIndex + 1); 
+                        slashIndex = expression.indexOf(slash, currentIndex - 1);
+
+                            if(currentIndex > oldIndex){           // checking if new match of the string is found and count
+
+                                count++;
+
+                                if(count == 2) {            // if we have two matches of the tag, assing zero for the next pair
+
+                                        if (slashIndex == currentIndex - 1){
+
+                                        count = 0;
+                                            
+                                        }
+
+                                        else {
+
+                                            return result.innerHTML = ('The expression is not valid');
+
+                                    }
+                                }
+
+                            }
+
+                        }
+                        if (count == 1){
+                            result.innerHTML = ('The expression is not valid')   // if we have only one match of the tag,expression is not valid
+                        } 
+
+                        else {
+
+                      return ifCorrectNames = true;         // if the new html tag has open and close tag name - true
+                    }
+                }
 
     </script>
 
