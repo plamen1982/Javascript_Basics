@@ -5,14 +5,14 @@
 	<title>The first form</title>
 </head>
 	<body>
-		<form name="first form" method="get" action="something.asp">
+		<form name="first form" method="get" action="something.asp" id="identityForm">
 			<table border="1">
 				<tr>
 					<td>
-						<label for="lastName">Last Name </label>
+						<label for="lastName" >Last Name </label>
 					</td>
 					<td colspan="3">
-						<input type="text" id="lastName" value="Hristov"></input>
+						<input type="text" id="lastName" value="endless"></input>
 					</td>
 				</tr>
 				<tr>
@@ -20,7 +20,7 @@
 						<label for="firstName">First Name</label>
 					</td>
 					<td colspan="3">
-						<input type="text" id="firstName" value="Plamen"></input>
+						<input type="text" id="firstName" value="nameless"></input>
 					</td>
 				</tr>
 				<tr>
@@ -43,7 +43,7 @@
 						<label for="state">State</label>
 					</td>
 					<td>
-						<input type="text" id="state" value="MA"></input>
+						<input type="text" id="state" ></input>
 					</td>
 				</tr>
 				<tr>
@@ -51,7 +51,7 @@
 						<label for="zipCode">Zip/Postal Code</label>
 					</td>
 					<td colspan="3">
-						<input type="text" id="zipCode" value="01801"></input>
+						<input type="text" id="zipCode" value="00"></input>
 					</td>
 				</tr>
 				<tr>
@@ -70,13 +70,13 @@
 						<label for="phone">Phone(country code, area code number)</label>
 					</td>
 					<td>
-						<input type="text" value="+001" id="phone"></input>
+						<input type="text" value="+359" id="phone"></input>
 					</td>
 					<td>
-						<input type="text" value="123"></input>
+						<input type="text" value="000"></input>
 					</td>
 					<td>
-						<input type="text" value="4567"></input>						
+						<input type="text" value="0000"></input>						
 					</td>
 				</tr>
 				<tr>
@@ -98,7 +98,7 @@
 						Day<input id="day" type="text" value="25"></input>
 					</td>
 					<td>
-						Year(4 digit)<input id="year" type="text" value="1982"></input>
+						Year(4 digit)<input id="year" type="text" value="nevermind"></input>
 					</td>
 				</tr>
 				<tr>
@@ -134,11 +134,16 @@
 				<tr>
 					<td colspan="4">
 					<input type="submit"></input>
-					<input type="reset"></input>
+					<input type="reset" onclick="resetForm()" value="Reset Form"></input>
 					</td>
 				</tr>
 				
 			</table>
 		</form>
+		<script>
+			const resetForm = () => {
+				document.getElementById("identityForm").reset();
+			}
+		</script>
 	</body>
 </html>
